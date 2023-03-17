@@ -11,7 +11,7 @@ echo "the username is $user"
 cp files/.bashrc /home/$user/.bashrc
 
 #Install Xorg packages
-pacman -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
+pacman --noconfirm --needed -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
 echo "exec dwm" >> /home/$user/.xinitrc
 
 #Install and configure dwm Window Manager
