@@ -1,11 +1,22 @@
 #!/bin/bash
 
-#Install Xorg packages
-su
-pacman -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
+scriptDirectory=pwd
+echo "Please enter the username of the account this script will install onto"
+read
+user=$REPLY
 
-mkdir ~/bin
-cd ~/bin
+echo "the username is $user"
+
+#Replace dotFiles
+cp files/.bashrc /home/$user/.bashrc
+
+#Install Xorg packages
+pacman -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk
+echo "exec dwm" >> /home/$user/.xinitrc
+
+#Install and configure dwm Window Manager
+mkdir /home/$user/bin
+cd /home/$user/bin
 
 git clone https://git.suckless.org/dwm
 git clone https://git.suckless.org/dmenu
