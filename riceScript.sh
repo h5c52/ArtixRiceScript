@@ -9,7 +9,7 @@ echo "the username is $user"
 
 #Replace dotFiles
 cp files/.bashrc /home/$user/.bashrc
-cp files/wallpaper.png $user.config/wallpaper.png
+cp files/wallpaper.png /home/$user/.config/wallpaper.png
 
 #Install Xorg packages
 pacman --noconfirm --needed -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk xwallpaper
