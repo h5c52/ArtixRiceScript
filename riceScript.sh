@@ -7,6 +7,9 @@ user=$REPLY
 
 echo "the username is $user"
 
+#Configure Pacman Repositories
+pacman --noconfirm --needed -S 
+
 #Replace dotFiles
 cp files/.bashrc /home/$user/.bashrc
 cp files/.Xmodmap /home/$user/.Xmodmap
