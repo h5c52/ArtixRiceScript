@@ -14,10 +14,10 @@ pacman --noconfirm --needed -S
 cp files/.bashrc /home/$user/.bashrc
 cp files/.Xmodmap /home/$user/.Xmodmap
 cp files/.xinitrc /home/$user/.xinitrc
-cp files/wallpaper.png /home/$user/.config/wallpaper.png
+cp files/config/* /home/$user/.config/ -R
 
 #Install Xorg packages
-pacman --noconfirm --needed -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk xwallpaper xorg-xmodmap
+pacman --noconfirm --needed -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk xwallpaper xorg-xmodmap xorg-xrandr
 echo "exec dwm" >> /home/$user/.xinitrc
 
 #Install and configure dwm Window Manager
@@ -39,3 +39,9 @@ make clean install
 
 #Install Audio
 pacman --noconfirm --needed -S pipewire wireplumber pipewire-pulse
+
+#Install fonts
+pacman --noconfirm --needed -S ttf-ubuntu-mono-nerd ttf-ubuntu-nerd
+
+#Install other usefull programs
+pacman --noconfirm --needed -S htop
