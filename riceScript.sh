@@ -17,7 +17,7 @@ cp files/.xinitrc /home/$user/.xinitrc
 cp files/config/* /home/$user/.config/ -R
 
 #Install Xorg packages
-pacman --noconfirm --needed -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk xwallpaper xorg-xmodmap xorg-xrandr
+pacman --noconfirm --needed -S base-devel git xorg-server xorg-xinit libx11 libxinerama libxft webkit2gtk xwallpaper xorg-xmodmap xorg-xrandr xcompmgr
 echo "exec dwm" >> /home/$user/.xinitrc
 
 #Install and configure dwm Window Manager
@@ -44,4 +44,4 @@ pacman --noconfirm --needed -S pipewire wireplumber pipewire-pulse
 pacman --noconfirm --needed -S ttf-ubuntu-mono-nerd ttf-ubuntu-nerd
 
 #Install other usefull programs
-pacman --noconfirm --needed -S htop
+pacman --noconfirm --needed -S htop sxhkd
